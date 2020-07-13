@@ -1,0 +1,16 @@
+name: hive_example
+
+dependencies:
+  hive: any
+
+dev_dependencies:
+  build_runner: any
+  hive_generator: any
+
+dependency_overrides:
+  hive:
+    path: ../hive
+
+dev_dependencies_overrides:
+  hive_generator:
+    path: ../hive_generator
