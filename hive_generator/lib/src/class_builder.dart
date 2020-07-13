@@ -6,7 +6,12 @@ import 'package:hive/hive.dart';
 import 'package:hive_generator/src/builder.dart';
 import 'package:hive_generator/src/helper.dart';
 import 'package:source_gen/source_gen.dart';
-import 'package:dartx/dartx.dart';
+
+extension DartxWorkaround<E> on List<E> {
+  E firstOrNullWhere(bool Function(E element) predicate) {
+    return firstWhere(predicate, orElse: () => null);
+  }
+}
 
 class ClassBuilder extends Builder {
   var hiveListChecker = const TypeChecker.fromRuntime(HiveList);
